@@ -6,19 +6,19 @@ export default function Navbar() {
     <Nav variant="tabs">
       <NavbarToggle />
       <NavItem>
-        <NavLink>
-          <Link to={`/`}>Home</Link>
+        <NavLink as={Link} to={`/`}>
+          Home
         </NavLink>
       </NavItem>
 
       <NavItem>
-        <NavLink>
-          <Link to={`/signup`}>SignUp</Link>
+        <NavLink as={Link} to={`/signup`}>
+          SignUp
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink>
-          <Link to={`/login`}>Login</Link>
+        <NavLink as={Link} to={`/login`}>
+          Login
         </NavLink>
       </NavItem>
     </Nav>
