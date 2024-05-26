@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Badge,
   Button,
   Container,
   Form,
@@ -9,18 +10,22 @@ import {
   FormLabel,
   Stack,
 } from "react-bootstrap";
+import { LoginSchema } from "../validation/LoginValidation";
 
 function Login() {
-  const [formData, setFormData] = React.useState({ password: "", email: "" });
-  const [errors, setErrors] = React.useState({ password: "", email: "" });
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = React.useState({ email: "" });
+  const [errors, setErrors] = React.useState([]);
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    formData.email & formData.password !=null?console.log('notnull'):console.log('null');
-    console.table(formData);
+    await LoginSchema.validate(formData,{abortEarly:false})
+      .then(() => {
+        console.table(formData);
+      })
+      .catch((e) => setErrors(e.errors));
   };
   const handleInputs = (e) => {
     const { name, value } = e.target;
-    setFormData({...formData, [name]: value });
+    setFormData({ ...formData, [name]: value });
   };
 
   return (
@@ -30,11 +35,11 @@ function Login() {
         <Stack gap={3} className=" align-items-center ">
           <FormGroup>
             <FormLabel>Email</FormLabel>
-      
+
             <FormControl
               onChange={handleInputs}
               value={formData.email}
-              type="email"
+              // type="email"
               name="email"
             />
           </FormGroup>
@@ -54,6 +59,11 @@ function Login() {
             label="remember me"
           />
           <Button type="submit">Log In</Button>
+          {errors?.map((err, index) => (
+            <Badge key={index} bg="danger">
+              {err}
+            </Badge>
+          ))}
         </Stack>
       </Form>
     </>

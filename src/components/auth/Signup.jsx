@@ -16,7 +16,7 @@ import {
   InputGroup,
   Stack,
 } from "react-bootstrap";
-import { FormSchema } from "../validation/FormValidation";
+import { FormSchema } from "../validation/SignUpValidation";
 
 export default function SignUp() {
   const [FormData, setFormData] = React.useState({});

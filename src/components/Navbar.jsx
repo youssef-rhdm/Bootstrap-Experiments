@@ -5,6 +5,7 @@ export default function Navbar() {
   return (
     <Nav variant="tabs">
       <NavbarToggle />
+  
       <NavItem>
         <NavLink as={Link} to={`/`}>
           Home
@@ -16,6 +17,7 @@ export default function Navbar() {
           SignUp
         </NavLink>
       </NavItem>
+      
       <NavItem>
         <NavLink as={Link} to={`/login`}>
           Login

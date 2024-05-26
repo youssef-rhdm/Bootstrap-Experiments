@@ -10,11 +10,11 @@ function App() {
     <>
       <Container>
         <Navbar />
-      <Routes>
-    <Route path="/" element={<Home/>}/>
-    <Route path="/login" element={<Login/>}/>
-    <Route path="/signup" element={<SignUp/>}/>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
       </Container>
     </>
   );
