@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
 import {
   Button,
   Card,
@@ -9,18 +8,14 @@ import {
   Container,
   FloatingLabel,
   FormControl,
-  FormGroup,
-  FormLabel,
 } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-
 export default function Foorm() {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [FormData, setFormData] = useState({});
   const handleEmail = (e) => {
     e.preventDefault();
-
     setEmail(e.target.value);
   };
   const handlePassword = (e) => {
@@ -70,8 +65,7 @@ export default function Foorm() {
             <p>Password : {FormData.Password}</p>
           </CardBody>
           <CardFooter>
-            <Button variant="danger">Delete</Button>
-            <Button variant="outline-primary">Edit</Button>
+            <Button variant="outline-primary">Save</Button>
           </CardFooter>
         </Card>
       )}

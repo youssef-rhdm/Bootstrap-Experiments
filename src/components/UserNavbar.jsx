@@ -11,9 +11,10 @@ export default function UserNavbar() {
           Dashboard
         </NavLink>
       </NavItem>
+
       <NavItem>
         <NavLink as={Link} to={`/profile`}>
-          Dashboard
+          Profile
         </NavLink>
       </NavItem>
 
@@ -22,6 +23,7 @@ export default function UserNavbar() {
           Logout
         </NavLink>
       </NavItem>
+      
     </Nav>
   );
 }
